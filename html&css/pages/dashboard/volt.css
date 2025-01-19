@@ -1,20 +1,5 @@
 @charset "UTF-8";
-/*
 
-=========================================================
-* Volt - Free Bootstrap 5 Dashboard
-=========================================================
-
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-* Copyright 2021 Themesberg (https://www.themesberg.com)
-
-* Designed and coded by https://themesberg.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal. Contact us if you want to remove it.
-
-*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 .datepicker {
@@ -1914,7 +1899,7 @@ progress {
 
 .col-11 {
   flex: 0 0 auto;
-  width: 91.66666667%;
+  width: 100;
 }
 
 .col-12 {
@@ -3930,7 +3915,10 @@ progress {
   flex-grow: 1;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
 }
+
 
 @media (max-width: 575.98px) {
   .table-responsive-sm {
@@ -5955,21 +5943,6 @@ fieldset:disabled .btn {
     0 1px 1px rgba(17, 24, 39, 0.075);
 }
 
-.btn-sign-850 {
-  color: #ffffff;
-  background-color: #003A79;
-  border-color: #003A79;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 1px 1px rgba(17, 24, 39, 0.075);
-}
-
-.btn-sign-850:hover {
-  color: #ffffff;
-  background-color: #1a232f;
-  border-color: #19212c;
-}
-
-
 .btn-gray-850 {
   color: #ffffff;
   background-color: #184799;
@@ -7551,6 +7524,23 @@ fieldset:disabled .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  flex-direction: column; /* Mengatur elemen dalam kolom */
+  height: 100%; /* Membuat sidebar menggunakan seluruh tinggi */
+}
+
+.logout {
+  margin-top: 320px; /* Mendorong elemen ke bagian bawah */
+  padding: 16px; /* Tambahkan jarak untuk estetika */
+  text-align: center; /* Memusatkan teks */
+  background-color: #F2B705; /* Warna latar untuk pemisahan */
+}
+
+.logout .nav-link {
+  color: white; /* Pastikan teks terlihat jelas */
+}
+
+.logout .nav-link:hover {
+  background-color: #495057; /* Warna latar saat hover */
 }
 
 .nav-link {
@@ -7690,6 +7680,8 @@ fieldset:disabled .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  flex-grow: 1; /* Bagian ini akan mengisi ruang tersisa */
+  overflow-y: auto; /* Gulir jika konten terlalu panjang */
 }
 
 .navbar-nav .nav-link {
@@ -8238,10 +8230,11 @@ fieldset:disabled .btn {
   border: 2px solid #2c4984 !important;
   outline: 2px solid #ffffff;
   border-radius: 0.5rem;
+  height: 100%; 
 }
 
 .card .table-responsive {
-  height: 320px; /* 305px data dropdown */
+  height: 485px; /* 305px data dropdown */
   overflow-y: auto; /* Agar tabel bisa di-scroll jika kontennya melebihi tinggi */
 }
 
@@ -8274,6 +8267,11 @@ fieldset:disabled .btn {
 
 .card-body {
   flex: 1 1 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+.card-body2 {
+  height: 583px; /* 305px data dropdown */
   padding: 1.25rem 1.5rem;
 }
 
@@ -11260,6 +11258,10 @@ fieldset:disabled .btn {
 
 .border-yellow-200 {
   border-color: #f5dbb8 !important;
+}
+
+.border-yellow-300 {
+  border-color: #FCD317 !important;
 }
 
 .border-gray-50 {
@@ -23817,7 +23819,7 @@ fieldset:disabled .btn {
  * Sidebar
 */
 .sidebar {
-  display: block;
+  display: flex;
   position: fixed;
   top: 160px; /* Sesuaikan nilai ini untuk menambah jarak dari atas */
   bottom: 0;
@@ -23830,6 +23832,8 @@ fieldset:disabled .btn {
   width: 100%;
   transition: max-width 0.1s;
   height: auto; /* Tinggi otomatis berdasarkan konten */
+  border: 2px solid #FCD317; /* Warna border abu-abu muda */
+  flex-direction: column; /* Elemen disusun secara vertikal */
 }
 
 /* Atur sidebar-header agar berada di dalam sidebar */
@@ -23852,6 +23856,8 @@ fieldset:disabled .btn {
 /* Jika Anda ingin memberi ruang di bawah sidebar-header untuk elemen lainnya */
 .sidebar-inner {
   padding-top: 10px; /* Atur padding pada konten sidebar */
+  flex-grow: 1; /* Membuat bagian ini mengisi ruang tersisa */
+  overflow-y: auto; /* Menambahkan scroll jika konten terlalu panjang */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -23878,6 +23884,20 @@ fieldset:disabled .btn {
 .sidebar .nav-item.active > .nav-link {
   color: #f2f4f6;
   background-color: #374151;
+}
+
+.btn-sign-850 {
+  color: #ffffff;
+  background-color: #003A79;
+  border-color: #003A79;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 1px rgba(17, 24, 39, 0.075);
+}
+
+.btn-sign-850:hover {
+  color: #ffffff;
+  background-color: #1a232f;
+  border-color: #19212c;
 }
 
 .sidebar .nav-item .nav-link {
@@ -26788,6 +26808,10 @@ label {
   height: 1rem;
 }
 
+.logout-item {
+  margin-top: auto; /* Mendorong elemen ini ke bagian bawah */
+}
+
 .icon.icon-xs {
   height: 1.25rem;
 }
@@ -26801,7 +26825,7 @@ label {
 }
 
 .icon.icon-xl {
-  height: 4.5rem;
+  height: 3.0rem;
 }
 
 .icon.icon-xxl {
@@ -27153,12 +27177,8 @@ label {
 }
 
 .form-bg-image {
-  background: url('../../assets/img/BackgroundLogin.jpg') no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
 }
 
 /**
